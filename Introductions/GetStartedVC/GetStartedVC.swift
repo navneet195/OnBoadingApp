@@ -10,49 +10,48 @@ import Foundation
 import UIKit
 import Photos
 
-class GetStartedVC: UIViewController{
-    
+class GetStartedVC: UIViewController
+{
     @IBOutlet weak var sliderContainerView: UIView!
     @IBOutlet weak var getingStartedButton: UIButton!
-    
-    override func viewDidLoad() {
+}
+
+extension GetStartedVC
+{
+    override func viewDidLoad()
+    {
         self.navigationController?.isNavigationBarHidden = true
         initializer()
     }
     
-    func initializer(){
-        
-        let mGettingStartedSliderVC = GettingStartedSliderVC(nibName: "GettingStartedSliderVC", bundle: nil)
-        
+    func initializer()
+    {
+        let mGettingStartedSliderVC = GettingStartedSliderVC(nibName:Constants.gettingStartedSliderVC , bundle: nil)
         mGettingStartedSliderVC.view.frame = CGRect(x: 0, y: 0, width: sliderContainerView.frame.width, height: sliderContainerView.frame.height)
-        
         addChild(mGettingStartedSliderVC)
         mGettingStartedSliderVC.didMove(toParent: self)
         sliderContainerView.addSubview(mGettingStartedSliderVC.view)
-        
     }
     
-    @IBAction func getingStartedAction(_ sender: AnyObject) {
-        
+    @IBAction func getingStartedAction(_ sender: AnyObject)
+    {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        // rootViewController
         let rootViewController = mainStoryboard.instantiateViewController(withIdentifier: "CardTabBarController")
         // navigationController
         let navigationController = UINavigationController(rootViewController: rootViewController)
         navigationController.navigationBar.isHidden = true
-
-        if #available(iOS 13.0, *) {
+        
+        if #available(iOS 13.0, *)
+        {
             let sceneDelegate = UIApplication.shared.connectedScenes
                 .first!.delegate as! SceneDelegate
             sceneDelegate.window!.rootViewController = navigationController/* ViewController Instance */
             // iOS12 or earlier
-        } else {
-            // UIApplication.shared.keyWindow?.rootViewController
+        }
+        else
+        {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             appDelegate.window!.rootViewController = navigationController /* ViewController Instance */
-            
         }
-        
     }
 }
-

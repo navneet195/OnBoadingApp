@@ -7,23 +7,26 @@
 //
 
 import UIKit
-class GettingStartedPagesVC: UIViewController , UIGestureRecognizerDelegate
+class GettingStartedPagesVC: UIViewController
 {
     var pageIndex : Int = 0
     var imageName : String = ""
     var discriptiontext : String = ""
     var mTgettingStarted = TGettingStarted()
-    
+
     @IBOutlet weak var discriptionLable: UILabel!
     @IBOutlet weak var titleLable: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.layoutIfNeeded()
-        imageView.image = UIImage(named: mTgettingStarted.imageName!)
-        titleLable.text = mTgettingStarted.title
-        discriptionLable.text = mTgettingStarted.descriptions
-    }
-   
+extension GettingStartedPagesVC: UIGestureRecognizerDelegate
+{
+    override func viewDidLoad()
+    {
+          super.viewDidLoad()
+          view.layoutIfNeeded()
+          imageView.image = UIImage(named: mTgettingStarted.imageName!)
+          titleLable.text = mTgettingStarted.title
+          discriptionLable.text = mTgettingStarted.descriptions
+      }
 }

@@ -7,10 +7,9 @@
 //
 
 import Foundation
-class TGettingStarted: Codable {
-
+class TGettingStarted: Codable
+{
     var imageName: String?
     var title: String?
     var descriptions: String?
-    
 }

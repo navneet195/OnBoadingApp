@@ -7,40 +7,51 @@
 //
 
 import UIKit
-class GettingStartedSliderVC: UIViewController , UIPageViewControllerDataSource , UIPageViewControllerDelegate
+class GettingStartedSliderVC: UIViewController
 {
-
     @IBOutlet weak var containerVIew: UIView!
     var pageViewController : UIPageViewController?
     @IBOutlet weak var pageController: UIPageControl!
-
-// var viewControllers = []
     var currentIndex : Int = 0
+    var dataArray : NSMutableArray = []
+    var viewControllers = [UIViewController]()
     
-    
-      var dataArray : NSMutableArray = []
-    
-   var  viewControllers = [UIViewController]()
+    func viewControllerAtIndex(_ index: Int) -> GettingStartedPagesVC?
+    {
+        if self.dataArray.count == 0 || index > self.dataArray.count || index < 0
+        {
+            return nil
+        }
         
+        // Create a new view controller and pass suitable data.
+        let mGettingStartedPagesVC = GettingStartedPagesVC(nibName:Constants.gettingStartedPagesVC , bundle: nil)
+        let mTgettingStarted : TGettingStarted = dataArray[index] as! TGettingStarted
+        mGettingStartedPagesVC.mTgettingStarted = mTgettingStarted
+        mGettingStartedPagesVC.pageIndex = index
+        mGettingStartedPagesVC.view.tag = index
+        currentIndex = index
+        return mGettingStartedPagesVC
+    }
+    
+    
+}
+
+extension GettingStartedSliderVC
+{
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
- 
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
-       
-        let mTgettingStarted1 = TGettingStarted()
         
+        let mTgettingStarted1 = TGettingStarted()
         mTgettingStarted1.imageName = Constants.walkthrow_1_image_name
         mTgettingStarted1.title = Constants.walkthrow_1_title_txt
         mTgettingStarted1.descriptions = Constants.walkthrow_1_disc_txt
         
         dataArray.add(mTgettingStarted1)
-
-        let mTgettingStarted2 = TGettingStarted()
         
+        let mTgettingStarted2 = TGettingStarted()
         mTgettingStarted2.imageName = Constants.walkthrow_2_image_name
         mTgettingStarted2.title = Constants.walkthrow_2_title_txt
         mTgettingStarted2.descriptions = Constants.walkthrow_2_disc_txt
@@ -48,22 +59,18 @@ class GettingStartedSliderVC: UIViewController , UIPageViewControllerDataSource 
         dataArray.add(mTgettingStarted2)
         
         let mTgettingStarted3 = TGettingStarted()
-        
         mTgettingStarted3.imageName = Constants.walkthrow_3_image_name
         mTgettingStarted3.title = Constants.walkthrow_3_title_txt
         mTgettingStarted3.descriptions = Constants.walkthrow_3_disc_txt
         
         dataArray.add(mTgettingStarted3)
-        
-        
         pageController.numberOfPages = dataArray.count
-   
+        
         self.loadPager()
     }
- 
+    
     func loadPager(){
- 
-     
+        
         pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         pageViewController!.dataSource = self
         pageViewController?.delegate = self
@@ -75,28 +82,27 @@ class GettingStartedSliderVC: UIViewController , UIPageViewControllerDataSource 
         addChild(pageViewController!)
         containerVIew.addSubview(pageViewController!.view)
         pageViewController!.didMove(toParent: self)
-        
-        
         self.view.bringSubviewToFront(pageController)
         
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-   
-  
     
+}
+
+
+extension GettingStartedSliderVC: UIPageViewControllerDelegate, UIPageViewControllerDataSource
+{
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController?
     {
         var index = (viewController as! GettingStartedPagesVC).pageIndex
-        
         if (index == 0) || (index == NSNotFound) {
             return nil
         }
-        
         index = index - 1
-        
         return viewControllerAtIndex(index)
     }
     
@@ -113,29 +119,9 @@ class GettingStartedSliderVC: UIViewController , UIPageViewControllerDataSource 
         if (index == self.dataArray.count) {
             return nil
         }
-    
+        
         return viewControllerAtIndex(index)
     }
-    
-    func viewControllerAtIndex(_ index: Int) -> GettingStartedPagesVC?
-    {
-        
-        if self.dataArray.count == 0 || index > self.dataArray.count || index < 0
-        {
-            return nil
-        }
-        
-        // Create a new view controller and pass suitable data.
-       let mGettingStartedPagesVC = GettingStartedPagesVC(nibName: "GettingStartedPagesVC", bundle: nil)
-        let mTgettingStarted : TGettingStarted = dataArray[index] as! TGettingStarted
-        
-        mGettingStartedPagesVC.mTgettingStarted = mTgettingStarted
-        mGettingStartedPagesVC.pageIndex = index
-        mGettingStartedPagesVC.view.tag = index
-        currentIndex = index
-        
-        return mGettingStartedPagesVC
-}
     func pageViewController(_ pageViewController: UIPageViewController,
                             didFinishAnimating finished: Bool,
                             previousViewControllers: [UIViewController],
@@ -144,6 +130,5 @@ class GettingStartedSliderVC: UIViewController , UIPageViewControllerDataSource 
         guard completed else { return }
         pageController.currentPage = pageViewController.viewControllers!.first!.view.tag
     }
-
     
 }

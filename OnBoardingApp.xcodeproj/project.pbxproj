@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E447EE624840716009DA72F /* Loign.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E447EE524840716009DA72F /* Loign.storyboard */; };
 		4EA4993624829B6A000094F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4993524829B6A000094F2 /* AppDelegate.swift */; };
 		4EA4993824829B6A000094F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA4993724829B6A000094F2 /* SceneDelegate.swift */; };
 		4EA4993D24829B6A000094F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EA4993B24829B6A000094F2 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		34B791CC0C0572D40D258107 /* Pods-OnBoardingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnBoardingApp.debug.xcconfig"; path = "Target Support Files/Pods-OnBoardingApp/Pods-OnBoardingApp.debug.xcconfig"; sourceTree = "<group>"; };
+		4E447EE524840716009DA72F /* Loign.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Loign.storyboard; sourceTree = "<group>"; };
 		4EA4993224829B6A000094F2 /* Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EA4993524829B6A000094F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EA4993724829B6A000094F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E447EE4248406F9009DA72F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4E447EE524840716009DA72F /* Loign.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		4EA4992924829B6A000094F2 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +97,7 @@
 		4EA4993424829B6A000094F2 /* OnBoardingApp */ = {
 			isa = PBXGroup;
 			children = (
+				4E447EE4248406F9009DA72F /* Login */,
 				4EA499652482A342000094F2 /* Common */,
 				4EA499492482A27C000094F2 /* Introductions */,
 				4EA4993524829B6A000094F2 /* AppDelegate.swift */,
@@ -245,6 +256,7 @@
 			files = (
 				4EA499722482B32E000094F2 /* 3.png in Resources */,
 				4EA4995A2482A27C000094F2 /* GettingStartedPagesVC.xib in Resources */,
+				4E447EE624840716009DA72F /* Loign.storyboard in Resources */,
 				4EA4995C2482A27C000094F2 /* GettingStartedSliderVC.xib in Resources */,
 				4EA4994224829B6F000094F2 /* LaunchScreen.storyboard in Resources */,
 				4EA499732482B32E000094F2 /* 2.png in Resources */,

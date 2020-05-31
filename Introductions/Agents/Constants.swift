@@ -30,24 +30,21 @@ struct Constants {
     static let walkthrow_2_disc_txt = "Working out of a program? In addition to our 180+ free Workouts"
     static let walkthrow_3_disc_txt = "Get unlimited access to fintness & nutrition expertise from our Master Trainers."
     
-   
-    
     static let appGrayColor = Common.shared.uicolorFromHex(hexValue: 0x787878, alpha: nil)
     static let appBlueColor = Common.shared.uicolorFromHex(hexValue: 0x3CBEFF, alpha: nil)
-    
     static let appExclusiveYellowColor = Common.shared.uicolorFromHex(hexValue: 0xFFCC00, alpha: nil)
-    
     static let appGoldenColor = Common.shared.uicolorFromHex(hexValue: 0xFFCC00, alpha: nil)
  
 
-    //037AFF
-    
     static let text_Regular = "SFProText-Regular"
     static let text_Bold = "SFProText-Bold"
     static let text_Medium = "SFProText-Medium"
     static let text_SemiBold = "SFProText-Semibold"
     
-    
+    // Screen Name
+    static let gettingStartedPagesVC = "GettingStartedPagesVC"
+    static let gettingStartedSliderVC = "GettingStartedSliderVC"
+ 
 
 }
 
