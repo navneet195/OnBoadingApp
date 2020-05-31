@@ -1,7 +1,7 @@
 # OnBoadingApp
 A iOS onboarding component to add easily on your project.
 
-[![Watch the video]](https://youtu.be/DqP-kihCRco)
+[!Watch the video (https://youtu.be/DqP-kihCRco)]
 
 # Requirements
 `OS X 10.15.5+`
