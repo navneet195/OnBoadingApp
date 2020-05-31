@@ -1,24 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NYX-XR-Rqv">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Calendar-->
+        <scene sceneID="Mz8-Sy-hq7">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="nqB-5Q-5iX" customClass="LabelViewController" customModule="Fitness_OnBoading" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r5F-zB-YNz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="R1M-aJ-Z0m"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" id="0Wu-68-T9F"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="labelTitle" value="Calendar"/>
+                    </userDefinedRuntimeAttributes>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8o0-Nr-I5a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-622" y="761"/>
+        </scene>
+        <!--Card Tab Bar Controller-->
+        <scene sceneID="Qbq-td-W9J">
+            <objects>
+                <tabBarController storyboardIdentifier="CardTabBarController" id="NYX-XR-Rqv" customClass="PTCardTabBarController" customModule="PTCardTabBar" sceneMemberID="viewController">
+                    <tabBar key="tabBar" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rhs-VR-NKJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                            <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="tabBarBackgroundColor">
+                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="HIL-MW-wEB" kind="relationship" relationship="viewControllers" id="am3-Zz-tnW"/>
+                        <segue destination="nqB-5Q-5iX" kind="relationship" relationship="viewControllers" id="bHH-xQ-rKp"/>
+                        <segue destination="30h-8o-2l4" kind="relationship" relationship="viewControllers" id="LFi-1L-RNo"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hf0-iq-3iD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1093" y="-157"/>
+        </scene>
+        <!--Preferences-->
+        <scene sceneID="hlv-72-Cop">
+            <objects>
+                <viewController id="30h-8o-2l4" customClass="LabelViewController" customModule="Fitness_OnBoading" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gr5-Xt-BOA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="TaK-G2-OpU"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Preferences" image="more" id="uRn-ba-Aaa"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="labelTitle" value="More"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lhy-XR-kah" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1597" y="761"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="WbZ-hO-fS2">
+            <objects>
+                <viewController id="HIL-MW-wEB" customClass="HomeVC" customModule="Fitness_OnBoading" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" hidden="YES" contentMode="scaleToFill" id="D5t-Pc-QXa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Crk-lx-vXk">
+                                <rect key="frame" x="0.0" y="104" width="414" height="792"/>
+                                <subviews>
+                                    <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KO7-UE-syz">
+                                        <rect key="frame" x="0.0" y="4" width="414" height="687"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="KO7-UE-syz" secondAttribute="bottom" constant="101" id="GZ4-ii-NSZ"/>
+                                    <constraint firstItem="KO7-UE-syz" firstAttribute="leading" secondItem="Crk-lx-vXk" secondAttribute="leading" id="IRX-w4-wNq"/>
+                                    <constraint firstItem="KO7-UE-syz" firstAttribute="top" secondItem="Crk-lx-vXk" secondAttribute="top" constant="4" id="RDh-pn-mpe"/>
+                                    <constraint firstAttribute="trailing" secondItem="KO7-UE-syz" secondAttribute="trailing" id="VgR-XZ-dT6"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="32"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.9683577418" green="0.561032474" blue="0.62784600260000001" alpha="0.79531249999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Crk-lx-vXk" firstAttribute="leading" secondItem="yno-sa-9Wz" secondAttribute="leading" id="CrB-Fq-Y70"/>
+                            <constraint firstAttribute="bottom" secondItem="Crk-lx-vXk" secondAttribute="bottom" id="eRV-RY-Lxr"/>
+                            <constraint firstItem="Crk-lx-vXk" firstAttribute="trailing" secondItem="yno-sa-9Wz" secondAttribute="trailing" id="q08-2e-BLb"/>
+                            <constraint firstItem="Crk-lx-vXk" firstAttribute="top" secondItem="yno-sa-9Wz" secondAttribute="top" constant="60" id="rAj-6R-rCZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yno-sa-9Wz"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="34n-Q1-yyc"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="labelTitle" value="Home"/>
+                    </userDefinedRuntimeAttributes>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gw5-4W-cow" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-175.36231884057972" y="-597.32142857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="calendar" width="24" height="25"/>
+        <image name="home" width="26" height="24"/>
+        <image name="more" width="17" height="8"/>
+    </resources>
 </document>

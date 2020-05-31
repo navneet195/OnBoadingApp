@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  OnBoardingApp
 //
-//  Created by Navnit Baldha on 30/05/20.
+//  Created by Navnit Baldha on 31/05/20.
 //  Copyright © 2020 Navneet Baldha. All rights reserved.
 //
 
@@ -11,12 +11,20 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+
+               let isFirst = UserDefaults.standard.bool(forKey:"FirstTimecome" )
+               if  !isFirst
+               {
+                   UserDefaults.standard.set(true, forKey: "FirstTimecome")
+                   let mGetStartedVC = GetStartedVC(nibName: "GetStartedVC", bundle: nil)
+                   let navigationController = UINavigationController(rootViewController: mGetStartedVC)
+                   self.window!.rootViewController = navigationController
+               }
+        
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 
