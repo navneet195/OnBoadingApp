@@ -1,7 +1,7 @@
 # OnBoadingApp
 A iOS onboarding component to add easily on your project.
 
-[![Watch the video](https://github.com/navneet195/OnBoadingApp/blob/master/Screen%20Recording%202020-05-31%20at%204.36.58%20PM.mov)
+[![Watch the video](https://youtu.be/DqP-kihCRco)
 
 # Requirements
 `OS X 10.15.5+`
